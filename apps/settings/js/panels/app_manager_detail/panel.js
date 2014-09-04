@@ -4,9 +4,9 @@ define(function(require) {
   var SettingsListener = require('shared/settings_listener');
   var SettingsPanel = require('modules/settings_panel');
   var PermissionDetail =
-    require('panels/app_permissions_detail/app_permissions_detail');
+    require('panels/app_manager_detail/app_manager_detail');
 
-  return function ctor_app_permissions_detail_panel() {
+  return function ctor_app_manager_detail_panel() {
     var elements = {};
     var permissionDetailModule = PermissionDetail();
     var uninstall =

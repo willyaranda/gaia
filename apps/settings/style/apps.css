@@ -1,8 +1,8 @@
 /**
- * Application Permissions
+ * Application Manager
  */
 
-#appPermissions ul li img,
+#appManager ul li img,
 #homescreens ul li img {
   margin-right: 1.4rem;
   width: 3rem;
@@ -10,7 +10,7 @@
   filter: url('shadow.svg#drop-shadow');
 }
 
-#appPermissions ul li > a,
+#appManager ul li > a,
 #homescreens ul li > a  {
   flex-direction: row;
   justify-content: flex-start;
@@ -28,7 +28,7 @@
   height: calc(6rem - 2rem);
 }
 
-#appPermissions .cb-alert {
+#appManager .cb-alert {
   position: fixed;
 }
 
@@ -36,7 +36,7 @@
  * Right To Left Layout
  */
 
-html[dir="rtl"] #appPermissions ul li img,
+html[dir="rtl"] #appManager ul li img,
 html[dir="rtl"] #homescreens ul li img {
   margin-left: 1.4rem;
   margin-right: auto;

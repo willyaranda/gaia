@@ -7,6 +7,7 @@ var Settings = require('../app/app'),
 marionette('airplaneMode settings', function() {
   var client = marionette.client();
   var settingsApp;
+  var a = 'hola';
   var rootPanel;
 
   setup(function() {

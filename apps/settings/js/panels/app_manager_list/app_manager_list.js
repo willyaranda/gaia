@@ -1,5 +1,5 @@
 /**
- * Handle app_permissions_list panel's functionality.
+ * Handle app_manager_list panel's functionality.
  */
 
 define(function(require) {
@@ -46,11 +46,12 @@ define(function(require) {
     },
 
     /**
-     * Go to app_permissions_detail panel when user select an app.
+     * Go to app_manager_detail panel when user select an app.
      */
     onAppChoose: function pl_on_app_choose(evt) {
+      console.log('holaaaaaaaaaa', 'pl_on_app_choose')
       if (evt.target.dataset && evt.target.dataset.appIndex) {
-        SettingsService.navigate('appPermissions-details', {
+        SettingsService.navigate('appManager-detail', {
           app: this._apps[evt.target.dataset.appIndex],
           permissionsTable: this._permissionTable
         });
@@ -87,9 +88,17 @@ define(function(require) {
       if (!app) {
         return;
       }
-      SettingsService.navigate('appPermissions');
+      SettingsService.navigate('appManager');
       this._apps.splice(appIndex, 1);
       this.renderList();
+    },
+
+    /**
+     * When user clicks on the "Default launch app" menu item
+     */
+    onDefaultApp: function pl_on_default_app(evt) {
+      console.log('pl_on_default_app');
+      SettingsService.navigate('appManager-app-activities');
     },
 
     /**

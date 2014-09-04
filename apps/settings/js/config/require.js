@@ -118,11 +118,19 @@ require.config({
       exclude: ['main']
     },
     {
-      name: 'panels/app_permissions_detail/panel',
+      name: 'panels/app_manager_activities_list_choose/panel',
       exclude: ['main']
     },
     {
-      name: 'panels/app_permissions_list/panel',
+      name: 'panels/app_manager_activities_list/panel',
+      exclude: ['main']
+    },
+    {
+      name: 'panels/app_manager_detail/panel',
+      exclude: ['main']
+    },
+    {
+      name: 'panels/app_manager_list/panel',
       exclude: ['main']
     },
     {

@@ -4,9 +4,9 @@ define(function(require) {
 
   var SettingsPanel = require('modules/settings_panel');
   var PermissionList =
-    require('panels/app_permissions_list/app_permissions_list');
+    require('panels/app_manager_list/app_manager_list');
 
-  return function ctor_app_permissions_list_panel() {
+  return function ctor_app_manager_list_panel() {
     // We use this flag to identify permissions_table.json has been loaded or
     // not.
     var permissionsTableHasBeenLoaded = false;
@@ -19,12 +19,32 @@ define(function(require) {
         methodName: 'onAppChoose'
       },
       {
+        elementName: 'goButton',
+        eventType: 'click',
+        methodName: 'confirmGoClicked'
+      },
+      {
+        elementName: 'mainButton',
+        eventType: 'click',
+        methodName: 'clearBookmarksData'
+      },
+      {
+        elementName: 'cancelButton',
+        eventType: 'click',
+        methodName: 'confirmCancelClicked'
+      },
+      {
         eventType: 'applicationinstall',
         methodName: 'onApplicationInstall'
       },
       {
         eventType: 'applicationuninstall',
         methodName: 'onApplicationUninstall'
+      },
+      {
+        elementName: 'launchActivitiesList',
+        methodName: 'onDefaultApp',
+        eventType: 'click'
       }
     ];
 
@@ -57,9 +77,14 @@ define(function(require) {
     return SettingsPanel({
       onInit: function(panel) {
         elements = {
-          list: panel.querySelector('.app-list')
+          list: panel.querySelector('.app-list'),
+          dialog: panel.querySelector('.cb-alert'),
+          goButton: panel.querySelector('.cb-alert-clear'),
+          cancelButton: panel.querySelector('.cb-alert-cancel'),
+          mainButton: panel.querySelector('.clear-bookmarks-app'),
+          launchActivitiesList: panel.querySelector('#menuItem-defaultLaunchApp')
         };
-        permissionListModule.init(elements.list);
+        permissionListModule.init(elements);
       },
 
       onBeforeShow: function() {

@@ -1,0 +1,1 @@
+app_manager_activities_list_choose.js

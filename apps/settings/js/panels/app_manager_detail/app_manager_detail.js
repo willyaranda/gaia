@@ -1,5 +1,5 @@
 /**
- * Handle app_permissions_detail panel's functionality.
+ * Handle app_manager_detail panel's functionality.
  */
 
 define(function(require) {
@@ -29,10 +29,10 @@ define(function(require) {
     },
 
     /**
-     * Back to app_permissions_list panel.
+     * Back to app_manager_list panel.
      */
     back: function pd_back() {
-      SettingsService.navigate('appPermissions');
+      SettingsService.navigate('appManager');
     },
 
     /**
@@ -212,7 +212,7 @@ define(function(require) {
     }
   };
 
-  return function ctor_app_permissions_detail() {
+  return function ctor_app_manager_detail() {
     return new PermissionsDetail();
   };
 });
