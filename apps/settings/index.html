@@ -152,6 +152,7 @@
     <link rel="import" href="/elements/screen_lock.html">
     <link rel="import" href="/elements/simpin_dialog.html">
     <link rel="import" href="/elements/simpin.html">
+    <link rel="import" href="/elements/app_permissions_activities.html">
     <link rel="import" href="/elements/app_permissions_details.html">
     <link rel="import" href="/elements/app_permissions.html">
     <link rel="import" href="/elements/do_not_track.html">
@@ -319,8 +320,10 @@
     <section is="simpin-dialog" role="region" id="simpin-dialog"></section>
     <!-- Security :: SIM Security -->
     <section is="simpin" role="region" id="simpin" data-require-sub-panels="true"></section>
+    <!-- Security :: Application Permissions :: Default activities -->
+    <section is="appPermissions-activities" role="region" id="appPermissions-activities" data-require-sub-panels="true"></section>
     <!-- Security :: Application Permissions :: Details -->
-    <section is="appPermissions-details" role="region" id="appPermissions-details"></section>
+    <section is="appPermissions-details" role="region" id="appPermissions-details" data-require-sub-panels="true"></section>
     <!-- Security :: Application Permissions -->
     <section is="appPermissions" role="region" id="appPermissions" data-require-sub-panels="true"></section>
     <!-- Security :: Do Not Track -->
@@ -395,6 +398,11 @@
           <h2 data-l10n-id="networkAndConnectivity">Network &amp; Connectivity</h2>
         </header>
         <ul>
+        <li>
+            <a id="menuItem-appPermissions" class="menu-item" data-icon="tick-circle" href="#appPermissions">
+              <span data-l10n-id="appPermissions">App permissions</span>
+            </a>
+          </li>
           <li data-category="connectivity">
             <label class="pack-switch">
               <input id="airplaneMode-input" class="uninit" type="checkbox" disabled>
@@ -541,11 +549,7 @@
               <small id="simCardLock-desc" class="menu-item-desc"></small>
             </a>
           </li>
-          <li>
-            <a id="menuItem-appPermissions" class="menu-item" data-icon="tick-circle" href="#appPermissions">
-              <span data-l10n-id="appPermissions">App permissions</span>
-            </a>
-          </li>
+          
           <li>
             <a id="menuItem-doNotTrack" class="menu-item" data-icon="do-not-track" href="#doNotTrack">
               <span data-l10n-id="doNotTrack">Do Not Track</span>

@@ -58,13 +58,6 @@ define(function(require) {
     },
 
     /**
-     * Go to app_permissions_activities when the user selects this menu item
-     */
-    onActivitiesList: function pl_on_activities_list(evt) {
-      SettingsService.navigate('appPermissions-activities');
-    },
-
-    /**
      * When new application is installed, we push the app to list, sort them and
      * rerender the app list.
      */

@@ -14,6 +14,11 @@ define(function(require) {
     var permissionListModule = PermissionList();
     var eventMapping = [
       {
+        elementName: 'activitiesdetail',
+        eventType: 'click',
+        methodName: 'onActivitiesList'
+      },
+      {
         elementName: 'list',
         eventType: 'click',
         methodName: 'onAppChoose'
@@ -57,7 +62,8 @@ define(function(require) {
     return SettingsPanel({
       onInit: function(panel) {
         elements = {
-          list: panel.querySelector('.app-list')
+          list: panel.querySelector('.app-list'),
+          activitiesdetail: panel.querySelector('#default-launch-app')
         };
         permissionListModule.init(elements.list);
       },

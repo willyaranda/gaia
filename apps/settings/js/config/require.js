@@ -118,6 +118,10 @@ require.config({
       exclude: ['main']
     },
     {
+      name: 'panels/app_permissions_activities/panel',
+      exclude: ['main']
+    },
+    {
       name: 'panels/app_permissions_detail/panel',
       exclude: ['main']
     },
